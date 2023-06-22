@@ -61,18 +61,20 @@ def tokenize_inputs(config, tokenizer, examples):
 def load_data(config, tokenizer):
     dataset_path = config["dataset_path"]
 
-    if os.path.exists(dataset_path):
-        if os.path.isdir(dataset_path):
-            files = glob.glob(os.path.join(dataset_path, "*_clean.jsonl"))
-        else:
-            files = [dataset_path]
+    # if os.path.exists(dataset_path):
+    #     if os.path.isdir(dataset_path):
+    #         files = glob.glob(os.path.join(dataset_path, "*_clean.jsonl"))
+    #     else:
+    #         files = [dataset_path]
 
-        print(f"Reading files {files}")
+    #     print(f"Reading files {files}")
 
-        dataset = load_dataset("json", data_files=files, split="train")
+    #     dataset = load_dataset("json", data_files=files, split="train")
 
-    else:
-        dataset = load_dataset(dataset_path, split="train")
+    # else:
+    #     dataset = load_dataset(dataset_path, split="train")
+
+    dataset = load_dataset("mwritescode/slither-audited-smart-contracts")
 
     dataset = dataset.train_test_split(test_size=.05, seed=config["seed"])
 

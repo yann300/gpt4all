@@ -1,6 +1,6 @@
 # model/tokenizer
-model_name: # update
-tokenizer_name: # update
+model_name: "ggml-gpt4all-j-v1.3-groovy.bin" # update
+tokenizer_name: "ggml-gpt4all-j-v1.3-groovy.bin" # update
 gradient_checkpointing: false
 save_name: # CHANGE
 
